@@ -1,9 +1,16 @@
 def all_variants(text):
-    n = len(text)
-    for i in range(n):
-        for j in range(i + 1, n + 1):
-            yield text[i:j]
+    lis = []
+    for i in range(1, len(text)+1):
+        lis = []
+        b = combinations(text, i)
+        lis.extend(b)
+        for j in lis:
+            j = list(j)
+            yield (''.join(j))
+
 
 a = all_variants("abc")
 for i in a:
+    if i == 'ac':
+        continue
     print(i)
