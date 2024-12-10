@@ -1,3 +1,5 @@
+from itertools import combinations
+
 def all_variants(text):
     lis = []
     for i in range(1, len(text)+1):
